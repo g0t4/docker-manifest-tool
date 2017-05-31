@@ -1,4 +1,4 @@
-FROM microsoft/windowsservercore
+FROM microsoft/nanoserver
 # set powershell as the default SHELL
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 

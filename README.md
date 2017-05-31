@@ -17,3 +17,12 @@ docker run --rm weshigbee/manifest-tool inspect microsoft/dotnet:2-runtime
 # useful to run tool as if installed locally:
 alias manifest-tool="docker run --rm weshigbee/manifest-tool"
 ```
+
+## Building the images
+
+```
+# Linux image
+docker build -t weshigbee/manifest-tool . 
+# Windows image
+docker build -t weshigbee/manifest-tool:nanoserver -f Dockerfile.windows .
+```
