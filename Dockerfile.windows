@@ -1,0 +1,10 @@
+FROM microsoft/windowsservercore
+# set powershell as the default SHELL
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+ENV MANIFEST_TOOL_VERSION=v0.4.0
+ENV DOWNLOAD_URL=https://github.com/estesp/manifest-tool/releases/download/${MANIFEST_TOOL_VERSION}/manifest-tool-windows-amd64.exe
+
+RUN Invoke-WebRequest $Env:DOWNLOAD_URL -OutFile manifest-tool.exe
+
+ENTRYPOINT ["manifest-tool.exe"]
